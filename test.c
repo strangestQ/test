@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS 1
+﻿#define _CRT_SECURE_NO_WARNINGS 1
 
 #include <stdio.h>
 //int main()
@@ -60,5 +60,56 @@
 //	//printf("%s\n", arr1);
 //	//printf("%s\n", arr2);
 //
+//	return 0;
+//}
+//int main()
+//{
+//	printf("c:\test\test.c");
+//	printf("ab\ncd");
+//	printf("\a");
+//	printg(
+////	)
+////	return 0;
+////}
+//int main()
+//{
+//	//printf("%c\n", '\101');
+//	printf("%c\n", '\x30');
+//
+//	return 0;
+//}
+//int main()
+//{
+//	printf("%d\n", strlen("c:\test\328\test.c"));
+//
+//	return 0;
+////}
+//int main()
+//{
+//	int input = 0;
+//	printf("坚持学代码\n");
+//	printf("成功或失败(1/0)?");
+//	scanf("%d", &input);
+//
+//	if (input == 1)
+//		printf("找到工作\n");
+//	else
+//		printf("打工人\n");
+//
+//    
+//	return 0;
+//}
+//int main()
+//{
+//	int line = 0;
+//	while (line < 30000)
+//	{
+//		printf("写代码:%d\n", line);
+//		line++;
+//	}
+//	if (line == 30000)
+//	{
+//		printf("好offer\n");
+//	}
 //	return 0;
 //}
