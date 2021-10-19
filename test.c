@@ -68,9 +68,9 @@
 //	printf("ab\ncd");
 //	printf("\a");
 //	printg(
-////	)
-////	return 0;
-////}
+//	)
+//	return 0;
+//}
 //int main()
 //{
 //	//printf("%c\n", '\101');
@@ -83,7 +83,7 @@
 //	printf("%d\n", strlen("c:\test\328\test.c"));
 //
 //	return 0;
-////}
+//}
 //int main()
 //{
 //	int input = 0;
@@ -111,5 +111,46 @@
 //	{
 //		printf("好offer\n");
 //	}
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[15] = { 0 };
+//	printf("%d\n", sizeof(arr));
+//	printf("%d\n", sizeof(arr[0]));
+//	int x = sizeof(arr) / sizeof(arr[0]);
+//	printf("%d\n", x);
+//	return 0;
+//}
+//int main()
+//{
+
+	//int a = 10;
+	//int b = a++;//后置++ - 先使用，后++
+	//printf("%d\n", b);
+	//printf("%d\n", a);
+	//int a = 10;
+	//int b = ++a;//前置++ - 先++，后使用
+	//printf("%d\n", b);
+	//printf("%d\n", a);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 3.14;//不同类型转换，会警告丢失数据
+//	printf("%d\n", a);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 5;
+//	int b = 9;
+//	int max = 0;
+//	//if (a > b)
+//	//	max = a;
+//	//else
+//	//	max = b;
+//	max = a > b ? a : b;//用条件操作符（三目操作符）表达上面的简单情况，复杂情况不要使用
+//	printf("%d\n", max);
 //	return 0;
 //}
