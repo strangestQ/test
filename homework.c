@@ -22,3 +22,10 @@
 //
 //	return 0;
 //}
+//V–¾‰ğCŒ¾Œê“ü–å‰‰K1-4
+int main()
+{
+	int x = 3.14;
+	printf("x‚Ì’l‚Í%d‚ÅB\n", x);
+	return 0;
+}
