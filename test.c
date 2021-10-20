@@ -154,3 +154,64 @@
 //	printf("%d\n", max);
 //	return 0;
 //}
+//typedef unsigned int u_int;//重新定义一个类型，可用于简化
+//
+//int main()
+//{
+//	unsigned int num = 100;
+//	u_int mun = 100;
+//	return 0;
+//}
+//void test()
+//{
+//	int a = 1;//打印结果为2 2 2 2 2 2 2 2 2 2
+//	a++;
+//	printf("%d ", a);
+//}
+//void test()
+//{
+//	static int a = 1;//打印结果为2 3 4 5 6 7 8 9 10 11
+//	a++;
+//	printf("%d ", a);
+//}
+//int main()
+//{
+//	int i = 0;
+//	while (i < 10)
+//	{
+//		test();
+//		i++;
+//	}
+//	return 0;
+//}
+//extern 声明外部符号
+//extern int g_val;
+//int main()
+//{
+//	printf("%d\n", g_val);
+//	return 0;
+//}
+
+//extern int Add(int, int);
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int sum = Add(a,b);
+//	printf("sum=%d\n", sum);
+//	return 0;
+//}
+//#define MAX 1000//define定义的常量
+//int main()
+//{
+//	printf("%d\n", MAX);
+//	return 0;
+//}
+//#define Add(X,Y) ((X)+(Y))//define定义的宏
+//int main()
+//{
+//	//如果上面define定义的宏不想当成一个普通的变量，而是需要定义为表达式，则需要用（）分别囊括起来
+// printf("%d\n", 4*Add(2, 3));
+//	return 0;
+//}
+//
