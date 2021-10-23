@@ -55,10 +55,10 @@
 //	char arr1[] = "abc";
 //	char arr2[] = { 'a','b','c' };
 //
-//	//int len = strlen("abc");
-//	//printf("%d\n", len);
-//	//printf("%s\n", arr1);
-//	//printf("%s\n", arr2);
+//	int len = strlen("abc");
+//	printf("%d\n", len);
+//	printf("%s\n", arr1);
+//	printf("%s\n", arr2);
 //
 //	return 0;
 //}
@@ -214,4 +214,54 @@
 // printf("%d\n", 4*Add(2, 3));
 //	return 0;
 //}
-//
+//int main()
+//{
+//	int a = 10;
+//	printf("%p\n", &a);
+//	int* pa = &a;//pa是用来存放地址的，在C语言中pa叫做指针变量
+//    //* 说明pa是指针变量
+//	//int 说明pa执行的对象是int(整形）
+//	char ch = 'w';
+//	char* pc = &ch;
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 10;
+//	int* pa = &a;
+//	*pa = 20;//* 解引用操作 - *pa就是通过pa里面的地址，找到a
+//	printf("%d\n", a);
+//	return 0;
+//}
+//int main()
+//{
+//	printf("%d\n", sizeof(char*));
+//	printf("%d\n", sizeof(short*));
+//	printf("%d\n", sizeof(int*));
+//	printf("%d\n", sizeof(long*));
+//	printf("%d\n", sizeof(long long*));
+//	printf("%d\n", sizeof(float*));
+//	printf("%d\n", sizeof(double*));
+//	return 0;
+//}
+//struct Stu//创建了一个学生的类型
+//{
+//	char name[20];//结构体中的成员变量
+//	int age;
+//	double score;
+//};
+//struct Book//创建了一个书的类型
+//{
+//	char name[20];
+//	int price;
+//	double id[30];
+//};
+//int main()
+//{
+//	struct Stu s = { "张三",20,85.5 };//结构体的创建和初始化
+//	printf("1:%s %d %lf\n", s.name, s.age, s.score);
+//	struct Stu* ps = &s;
+//	printf("2:%s %d %lf\n", (*ps).name, (*ps).age, (*ps).score);
+//	printf("3:%s %d %lf\n", ps->name, ps->age, ps->score);
+//	return 0;
+//}
