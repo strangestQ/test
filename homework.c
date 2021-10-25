@@ -76,3 +76,64 @@
 //	printf("それらの和は%dです。\n", n1 + n2 + n3);
 //	return 0;
 //}
+//新明解C言語入門演習2-1
+//int main()
+//{
+//	int x, y;
+//	puts("二つの整数を入力せよ。");
+//	printf("整数x:"); scanf("%d", &x);
+//	printf("整数y:"); scanf("%d", &y);
+//	printf("xの値はyの%d%%です。\n", 100 * x / y);
+//	return 0;
+//}
+//新明解C言語入門演習2-2
+//int main()
+//{
+//	int a, b;
+//	puts("二つの整数を入力せよ。");
+//	printf("整数a:"); scanf("%d", &a);
+//	printf("整数b:"); scanf("%d", &b);
+//	printf("それらの和は%dで積は%dです。\n",a+b,a*b);
+//
+//	return 0;
+//}
+//新明解C言語入門演習2-3
+//int main()
+//{
+//	double a;
+//	printf("実数を入力せよ:"); scanf("%lf", &a);
+//	printf("あなたは%fと入力しましたね。\n", a);
+//	return 0;
+//}
+//新明解C言語入門演習2-4
+//int main()
+//{
+//	int a;
+//	double b;
+//	printf("a="); scanf("%d", &a);
+//	printf("b="); scanf("%lf", &b);
+//	printf("a+b=%f\n", a + b);
+//	printf("a-b=%f\n", a - b);
+//	printf("a*b=%f\n", a * b);
+//	printf("a/b=%f\n", a / b);
+//	return 0;
+//}
+//新明解C言語入門演習2-5
+//int main()
+//{
+//	int x, y;
+//	puts("二つの整数を入力せよ。");
+//	printf("整数x:"); scanf("%d", &x);
+//	printf("整数y:"); scanf("%d", &y);
+//	printf("xの値はyの%f%%です。\n", (double)100 * x / y);
+//	return 0;
+//}
+//新明解C言語入門演習2-6
+//int main()
+//{
+//	int a;
+//	printf("身長を入力せよ:"); scanf("%d", &a);
+//	double b=(a - 100) * 0.9;
+//	printf("標準体重は%3.1fです。\n", b);
+//    return 0;
+//}
