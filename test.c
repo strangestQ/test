@@ -1,6 +1,8 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS 1
 
 #include <stdio.h>
+#include <math.h>//sqrt函数 
+#include <stdlib.h>//system,srand,rand函数所需头文件
 #include<string.h>//strlen,strcmp函数所需头文件
 #include<windows.h>//Sleep函数所需头文件
 //int main()
@@ -544,5 +546,168 @@
 //	}
 //	if (i == 3)
 //		printf("三次密码均错误，退出程序");
+//	return 0;
+//}
+//int main()
+//{
+//	int m, n = 0;
+//	scanf("%d%d", &m, &n);
+//	int max = 0;
+//	if (m > n)
+//		max = n;
+//	else
+//		max = m;
+//	while (1)
+//	{
+//		if (m % max == 0 && n % max == 0)
+//		{
+//			printf("最大公约数就是:%d\n", max);
+//			break;
+//		}
+//		max--;
+//	}
+//
+//	return 0;
+//}
+//辗转相除法
+//int main()
+//{
+//	int m, n = 0;
+//	scanf("%d%d", &m, &n);
+//	int i = 0;
+//	while(i = m % n)
+//	{
+//		m = n;
+//		n = i;
+//	}
+//	printf("最大公约数:%d\n", n);
+//	return 0;
+//}
+//int main()
+//{
+//	int m, n, i, max = 0;
+//	scanf("%d%d", &m, &n);
+//	max = m * n;
+//	while (i = m % n)
+//	{
+//		m = n;
+//		n = i;
+//	}
+//	printf("最小公倍数:%d\n", max/n);
+//	return 0;
+//}
+//int main()
+//{
+//	int y = 0;
+//	int count = 0;
+//	for (y = 1000; y <= 2000; y++)
+//	{
+//		//if (y % 4 == 0)
+//		//{
+//		//	if (y % 100 != 0)
+//		//	{
+//		//		printf("%d ", y);
+//		//		count++;
+//		//	}
+//		//}
+//		//if (y % 400 == 0)
+//		//{
+//		//	printf("%d ", y);
+//		//	count++;
+//		//}
+//		if ((y % 4 == 0) && (y % 100 != 0) || (y % 400 == 0))
+//		{
+//			printf("%d ", y);
+//			count++;
+//		}
+//	}
+//	printf("\ncount:%d\n", count);
+//	return 0;
+//}
+//int main()
+//{
+//	int i = 0;
+//	for (i = 100; i <= 200; i++)
+//	{
+//		//判断i是否为素数
+//		//2->i-1之间的数字去试除i，看能不能整除
+//		int j = 0;
+//		for (j = 2; j < i; j++)
+//		{
+//			if (i % j == 0)
+//			{
+//				break;
+//			}
+//		}
+//		if (i == j)
+//		{
+//			printf("%d ", i);
+//		}
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int i = 0;
+//	int count = 0;
+//	for (i = 100; i <= 200; i++)
+//	{
+//		int j = 0;
+//		int flag = 1;//假设i就是素数
+//		//for (j = 2; j < i; j++)
+//		//sqrt - 是开平方的函数 - 需要引用头文件math.h
+//		//假设m = a * b
+//		//a和b中一定至少有一个数字是 <= m的开平方
+//		//例: 16 = 2 * 8 =4 * 4
+//		for (j = 2; j <=sqrt(i); j++)
+//		{
+//			if (i % j == 0)
+//			{
+//				flag = 0;//不是素数
+//				break;
+//			}
+//		}
+//		if (flag == 1)
+//		{
+//			printf("%d ", i);
+//			count++;
+//		}
+//	}
+//	printf("\n%d\n", count);
+//	return 0;
+//}
+//关机程序
+//只要运行起来，电脑就在1分钟内关机，如果输入:No，就取消关机
+//shutdown -s -t 60 (60秒后关机）
+//shutdown -a （取消关机）
+
+//int main()
+//{
+//	char input[20] = { 0 };
+//	//关机
+//	//C语言提供了一个函数:system() - 执行系统命令
+//	system("shutdown -s -t 60");
+////again:
+////	printf("请注意，你的电脑将在1分钟内关机，如果输入:No，就取消关机\n");
+////	scanf("%s", input);
+////	if (strcmp(input , "No") == 0)
+////	{
+////		system("shutdown -a");
+////	}
+////	else
+////	{
+////		goto again;
+////	}
+//	while (1)
+//	{
+//		printf("请注意，你的电脑将在1分钟内关机，如果输入:No，就取消关机\n");
+//		scanf("%s", input);
+//		if (strcmp(input, "No") == 0)
+//		{
+//			system("shutdown -a");
+//			break;
+//		}
+//	}
+//
 //	return 0;
 //}
