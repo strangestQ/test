@@ -221,8 +221,8 @@
 //{
 //	int a = 10;
 //	printf("%p\n", &a);
-//	int* pa = &a;//pa是用来存放地址的，在C语言中pa叫做指针变量
-//    //* 说明pa是指针变量
+//	int* pa = &a;//pa是用来存放地址的，在C语言中int*叫做指针变量
+//  //int* pa - 说明pa是指针变量
 //	//int 说明pa执行的对象是int(整形）
 //	char ch = 'w';
 //	char* pc = &ch;
@@ -266,6 +266,8 @@
 //	struct Stu* ps = &s;
 //	printf("2:%s %d %lf\n", (*ps).name, (*ps).age, (*ps).score);
 //	printf("3:%s %d %lf\n", ps->name, ps->age, ps->score);
+// //(*ps).name 和 ps->name 效果相同
+// // 使用方法： 结构体指针 -> 成员变量名 
 //	return 0;
 //}
 //int main()
@@ -396,7 +398,6 @@
 //	{
 //		printf("确认失败\n");
 //	}
-//
 //	return 0;
 //}
 //int main()
@@ -473,6 +474,7 @@
 //	printf("%d\n", sum);
 //	return 0;
 //}
+// 拆半查找法(二分查找法)
 //int main()
 //{
 //	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
@@ -709,5 +711,216 @@
 //		}
 //	}
 //
+//	return 0;
+//}
+//int main()
+//{
+//	char arr1[20] = { 0 };
+//	char arr2[] = "hello world";
+//	strcpy(arr1, arr2);//第一个参数是“目的地”，第二个参数是“源头”
+//	//意为将“arr2"的信息打印到"arr1"里去
+//	printf("%s", arr1);
+//	return 0;
+//}
+//int main()
+//{
+//	char arr[] = "hello world";
+//	//memset - 内存设置函数
+//	memset(arr, 'x', 5);//将“arr”这个空间的“前5个字符”设置为“x”
+//	printf("%s\n", arr);
+//	return 0;
+//}
+//int get_max(int x, int y)
+//{
+//	int z = 0;
+//	if (x > y)
+//		z = x;
+//	else
+//		z = y;
+//	return z;
+//}
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int max = get_max(a, b);
+//	printf("max = %d\n", max);
+//	return 0;
+//}
+//函数返回类型的地方如果为“void”，表示这个函数不返回任何值，也不需要返回
+//Swap1这样写是错误的
+//函数被调用时，实参传给形参，其实形参只是实参的一份临时拷贝
+//改变形参，并不能改变实参
+//void Swap1(int x, int y)//这里的参数叫形式参数/形参
+//{
+//	int z = x; 
+//	x = y;
+//	y = z;
+//}
+//void Swap2(int* pa, int* pb)//同样参数为形参
+//{
+//	int z = *pa;
+//	*pa = *pb;
+//	*pb = z;
+//}
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	//写一个函数 - 交换2个整型变量的值
+//	printf("交换前:a = %d b = %d\n", a, b);
+//	//Swap1(a, b);//这里函数调用的参数，叫做实际参数/实参
+//	Swap2(&a, &b);//同上，参数为实参
+//	printf("交换后:a = %d b = %d\n", a, b);
+//	return 0;
+//}
+//	Swap1(a, b);//传值调用
+//	Swap2(&a, &b);//传址调用
+// //写一个判断是否为素数的函数
+//int is_prime(int n)
+//{
+//	//2->n-1之间的数字
+//	int j = 0;
+//	//for (j = 2; j < n; j++)
+//	for (j = 2; j <= sqrt(n); j++)
+//	{
+//		if (n % j == 0)
+//			return 0;
+//	}
+//	return 1;
+//}
+//int main()
+//{
+//	//100-200之间的素数
+//	int i = 0;
+//	int count = 0;
+//	for (i = 100; i <= 200; i++)
+//	{
+//		//判断i是否为素数
+//		if (is_prime(i) == 1)
+//		{
+//			count++;
+//			printf("%d ", i);
+//		}
+//	}
+//	printf("\ncount = %d\n", count);
+//	return 0;
+//}
+//写一个判断是否为闰年的函数
+//int is_leap_year(int n)
+//{
+//	//if ((n % 4 == 0 && n % 100 != 0) || (n % 400 == 0))
+//	//	return 1;
+//	//else
+//	//	return 0;
+//	//以上4行也可以写成这样：
+//	return ((n % 4 == 0 && n % 100 != 0) || (n % 400 == 0));
+//}
+//int main()
+//{
+//	int y = 0;
+//	for (y = 1000; y <= 2000; y++)
+//	{
+//		if (is_leap_year(y) == 1)
+//		{
+//			printf("%d ", y);
+//		}
+//	}
+//	return 0;
+//}
+//写一个函数，实现一个整形有序数组的二分查找
+//int binaty_search(int a[], int k, int s)
+//{
+//	int left = 0;
+//	int right = s - 1;
+//	while(left <= right)
+//	{
+//		int mid = (left + right) / 2;
+//		if (a[mid] > k)
+//		{
+//			right = mid - 1;
+//		}
+//		else if (a[mid] < k)
+//		{
+//			left = mid + 1;
+//		}
+//		else
+//		{
+//			return mid;
+//		}
+//	}
+//	return -1;
+//}
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int key = 7;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	//找到了就返回找到的位置的下标
+//	//找不到就返回-1
+//  //数组arr传参，实际传递的不是数组本身
+//  //仅仅传过去了数组首元素的地址
+//  //所以函数内部算不出数组个数
+//  //需要将数组个数传参时，一定要在函数外部计算完毕后传参
+//	int ret = binaty_search(arr, key, sz);
+//	if (-1 == ret)
+//	{
+//		printf("找不到\n");
+//	}
+//	else
+//	{
+//		printf("找到了，下标是:%d\n", ret);
+//	}
+//	return 0;
+//}
+//写一个函数，每调用一次，就会将num的值增加1
+//void Add(int* p)
+//{
+//	(*p)++;
+//}
+//int main()
+//{
+//	int num = 0;
+//	Add(&num);
+//	printf("%d\n", num);
+//	Add(&num);
+//	printf("%d\n", num);
+//	Add(&num);
+//	printf("%d\n", num);
+//	return 0;
+//}
+//函数的嵌套调用
+//void new_line()
+//{
+//	printf("hello\n");
+//}
+//void three_line()
+//{
+//	int i = 0;
+//	for (i = 0; i < 3; i++)
+//	{
+//		new_line();
+//	}
+//}
+//int main()
+//{
+//	three_line();
+//	return 0;
+//}
+////但不能在函数中定义函数！
+//函数的链式访问 - 把一个函数的返回值作为另外一个函数的参数
+//int main()
+//{
+//	//int len = strlen("abc");
+//	//printf("%d\n", len);
+//	////链式访问
+//	//printf("%d\n", strlen("abc"));
+//	//char arr1[20] = { 0 };
+//	//char arr2[] = "hello";
+//	////strcpy(arr1, arr2);
+//	////printf("%s\n", arr1);
+//	//printf("%s\n", strcpy(arr1, arr2));
+//	printf("%d", printf("%d", printf("%d", 43)));//结果为4321
+//	//printf函数的返回值是打印在屏幕上的字符的个数
 //	return 0;
 //}
