@@ -924,3 +924,247 @@
 //	//printf函数的返回值是打印在屏幕上的字符的个数
 //	return 0;
 //}
+//int main()
+//{
+//	printf("hehe\n");
+//	main();
+//	return 0;
+//}
+//void print(unsigned int n)
+//{
+//	if (n > 9)
+//	{
+//		print(n / 10);
+//	}
+//	printf("%d ", n % 10);
+//}
+//int main()
+//{
+//	unsigned int num = 0;
+//	scanf("%u", &num);
+//	//递归 - 函数自己调用自己
+//	print(num);//print函数可以打印参数部分数字的每一位
+//	return 0;
+//}
+//写递归代码的时候:
+//1.不能死递归，都要有跳出条件，并且每次递归逼近跳出条件
+//2.递归层次不能太深
+//否则，就会 栈溢出 ，程序报错
+//编写一个函数不允许创建临时变量，求字符串长度
+//传统写法:
+//int my_strlen(char* str)
+//{
+//	int count = 0;
+//	while (*str != '\0')
+//	{
+//		count++;
+//		str++;
+//	}
+//	return count;
+//}
+//递归写法:
+//int my_strlen(char* str)
+//{
+//	if (*str != '\0')
+//		return 1 + my_strlen(str + 1);
+//	else
+//		return 0;
+//}
+//int main()
+//{
+//	char arr[] = "hello";
+//	//假设模拟一个strlen函数
+//	printf("%d\n", my_strlen(arr));
+//	return 0;
+//}
+//求n的阶乘的递归写法
+//int Fac(int n)
+//{
+//	if (n <= 1)
+//		return 1;
+//	else
+//		return n * Fac(n - 1);
+//	//数学中n的阶乘公式:
+//	//Fac(n) = n * Fac(n - 1) 
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int ret = Fac(n);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+//有一些功能，可以使用迭代(循环)的方式实现，也可以使用递归
+//同理，求第n个斐波那契数,公式:
+//Fib(n) = Fib(n - 1) + Fib(n - 2)
+//int Fib(int n)
+//{
+	//if (n <= 2)
+	//	return 1;
+	//else
+	//	return Fib(n - 1) + Fib(n - 2);
+	//递归可以求解，但效率太低 - 会重复大量的计算
+//	int a = 1;
+//	int b = 1;
+//	int c = 1;
+//	while (n > 2)
+//	{
+//		c = a + b;
+//		a = b;
+//		b = c;
+//		n--;
+//	}
+//	return c;
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int ret = Fib(n);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+//汉诺塔问题的递归解法
+//int step = 0;
+//void move(int n,char a,char b,char c)
+//{
+//	if (n > 0)
+//	{
+//		move(n - 1, a, c, b);
+//		step++;
+//		printf("step%d:%c-->%c\n", step, a, c);
+//		move(n - 1, b, a, c);
+//	}
+//}
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	printf("n = %d\n", n);
+//	move(n, 'x', 'y', 'z');
+//	return 0;
+//}
+//计算1/1-1/2+1/3-1/4+1/5......+1/99-1/100的值，打印结果
+//int main()
+//{
+//	int i = 0;
+//	double sum = 0.0;
+//	int flag = 1;
+//	for (i = 1; i <= 100; i++)
+//	{
+//		//if (i % 2 == 0)
+//		//	sum -= 1.0 / i;
+//		//else
+//		//	sum += 1.0 / i;
+//	//优化后的写法(先上面定义flag):
+//		sum += flag * 1.0 / i;
+//		flag = -flag;
+//	}
+//	printf("%lf\n", sum);
+//	return 0;
+//}
+//写一个函数，打印乘法口诀表，行数由自己决定
+//void print_table(int n)
+//{
+//	int i = 0;
+//	for (i = 1; i <= n; i++)
+//	{
+//		int j = 0;
+//		for (j = 1; j <= i; j++)
+//		{
+//			printf("%d*%d=%-2d ", i, j, i*j);
+//		}
+//		putchar('\n');
+//	}
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	print_table(n);
+//	//函数的起名是非常关键的，名字最好能体现函数的功能
+//	return 0;
+//}
+//编写一个函数，实现将字符串中的字符反向排列，不是逆序打印
+//要求不能使用C语言函数库中的字符串操作函数
+//int my_strlen(char* str)
+//{
+//	if (*str != '\0')
+//		return 1 + my_strlen(str + 1);
+//	else
+//		return 0;
+//}
+//循环写法:
+//void reverse_string(char* str)
+//{
+//	int left = 0;
+//	int right = my_strlen(str) - 1;
+//	while (left < right)
+//	{
+//		char tmp = str[left];
+//		//str[left]用指针的方式来写的话为: *(str + left)
+//		str[left] = str[right];
+//		str[right] = tmp;
+//		left++;
+//		right--;
+//	}
+//}
+//递归写法:
+//void reverse_string(char* str)
+//{
+//	char tmp = *str;
+//	int len = my_strlen(str);
+//	*str = *(str + len - 1);//len - 1是最后一个元素的下标
+//	*(str + len - 1) = '\0';
+//	if (my_strlen(str + 1) >= 2)
+//	{
+//		reverse_string(str + 1);
+//	}
+//	*(str + len - 1) = tmp;
+//}
+//int main()
+//{
+//	char arr[] = "abcdef";
+//	reverse_string(arr);
+//	printf("%s\n", arr);//fedcba
+//	return 0;
+//}
+//写一个递归函数DigitSum(n)，输入一个非负整数，返回组成它的数字之和
+//int DigitSum(int n)
+//{
+//	if (n > 9)
+//	{
+//		return DigitSum(n / 10) + n % 10;
+//	}
+//	else
+//	{
+//		return n;
+//	}
+//}
+//int main()
+//{
+//	int num = 0;
+//	scanf("%d", &num);
+//	int sum = DigitSum(num);
+//	printf("%d\n", sum);
+//	return 0;
+//}
+//编写一个函数，实现n的k次方，使用递归实现
+//double my_pow(int n, int k)
+//{
+//	if (k == 0)
+//		return 1;
+//	else if (k > 0)
+//		return n * my_pow(n, k - 1);
+//	else
+//		return 1.0 / (my_pow(n, -k));
+//}
+//int main()
+//{
+//	int n, k = 0;
+//	scanf("%d %d", &n, &k);
+//	double ret = my_pow(n, k);
+//	printf("%lf\n", ret);
+//	return 0;
+//}
