@@ -60,3 +60,102 @@
 //	print2(&s);//传址调用
 //	return 0;
 //}
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		arr[i] = i + 1;
+//	}	
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d\n", arr[i]);
+//	}
+//	return 0;
+//}
+//void test2()
+//{
+//	printf("hehe\n");
+//}
+//void test1()
+//{
+//	test2();
+//}
+//void test()
+//{
+//	test1();
+//}
+//int main()
+//{
+//	test();
+//	return 0;
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d\n", &n);
+//	int i = 0;
+//	int ret = 1;
+//	int sum = 0;
+//	int j = 0;
+//	for (i = 1; i <= n; i++)
+//	{
+//		ret = 1;
+//		for (j = 1; j <= i; j++)
+//		{
+//			ret *= i;
+//		}
+//		sum += ret;
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int i = 0;
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	for (i = 0; i <= 12; i++)
+//	{
+//		arr[i] = 0;
+//		printf("hehe\n");
+//	}
+//	//代码运行结果会进入死循环，因为调试时发现i和arr[12]的地址恰巧相同，所以i永远不会大于12
+//	//1.i和arr是局部变量
+//	//  局部变量是放在栈区上的
+//	//  栈区内存的使用习惯是：
+//	//  先使用高地址空间，再使用低地址空间
+//	//2.数组随着下标的增长，地址是由低到高变化的
+//	return 0;
+//}
+//模拟实现strcpy - 字符串拷贝
+void my_strcpy(char* dest, char* src)
+{
+	//while (*src != '\0')
+	//{
+	//	*dest = *src;
+	//	dest++;
+	//	src++;
+	//}
+	//*dest = *src;
+	//优化方案1
+	//while (*src != '\0')
+	//{
+	//	*dest++ = *src++;
+	//}
+	//*dest = *src;
+	//优化方案2
+	while (*dest++ = *src++)//即拷贝了'\0'，又使得循环停止
+	{
+		;
+	}
+}
+int main()
+{
+	char arr1[20] = "xxxxxxxxxx";
+	char arr2[] = "hello";
+	//strcpy(arr1, arr2);
+	my_strcpy(arr1, arr2);
+	printf("%s\n", arr1);
+	return 0;
+}
